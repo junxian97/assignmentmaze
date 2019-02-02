@@ -37,16 +37,16 @@ int find_path(int x, int y);
 
 
 int
-main(void)
+main(void)	
 {
-	display_maze();
+	display_maze();		//to display the demo maze 
 
-	if ( find_path(0, 11) == TRUE )
-		printf("Success!\n");
-	else
-		printf("Failed\n");
+	if ( find_path(0, 11) == TRUE )		// when from starting point can find the goal
+		printf("Success!\n");		// output success
+	else					// if not
+		printf("Failed\n");		// output no
 
-	display_maze();
+	display_maze();				// success = display the correct path from starting to the goal ; fail = display back the basic maze
 
 	return 0;
 }
@@ -71,7 +71,7 @@ int
 find_path(int x, int y)
 {
 	// If x,y is outside maze, return false.
-	if ( x < 0 || x > MCOLS - 1 || y < 0 || y > NROWS - 1 ) return FALSE;
+	if ( x < 0 || x > MCOLS - 1 || y < 0 || y > NROWS - 1 ) return FALSE;	//based on location
 
 	// If x,y is the goal, return true.
 	if ( maze[y][x] == 'G' ) return TRUE;
